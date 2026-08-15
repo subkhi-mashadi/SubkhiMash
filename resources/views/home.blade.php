@@ -1,0 +1,13 @@
+<x-layouts.app>
+    @include('partials.navbar')
+    @include('partials.hero')
+    @include('partials.about')
+    @include('partials.skills')
+    @include('partials.github-activity')
+    @include('partials.projects')
+    @include('partials.experience')
+    @include('partials.certificates')
+    @include('partials.testimonials')
+    @include('partials.contact')
+    @include('partials.footer')
+</x-layouts.app>
