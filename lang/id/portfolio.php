@@ -86,6 +86,6 @@ return [
 
     'footer' => [
         'rights' => 'Seluruh hak cipta dilindungi.',
-        'built' => 'Dibangun dengan Laravel, Tailwind & Three.js',
+        'built' => 'Bersedia untuk proyek freelance maupun posisi remote full-time.',
     ],
 ];
