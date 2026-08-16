@@ -23,11 +23,7 @@
         </ul>
 
         <div class="hidden md:flex items-center gap-3">
-            {{-- <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-medium px-3 py-1 border border-emerald-500/20">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span>
-                {{ __('portfolio.nav.status') }}
-            </span> --}}
-
+            
             <div class="flex items-center rounded-full border border-neutral-200 dark:border-white/10 text-xs font-medium overflow-hidden">
                 <a href="{{ route('lang.switch', 'id') }}" class="px-2.5 py-1.5 {{ app()->getLocale() === 'id' ? 'bg-neutral-900 dark:bg-white text-white dark:text-neutral-950' : 'text-neutral-600 dark:text-neutral-300' }}">ID</a>
                 <a href="{{ route('lang.switch', 'en') }}" class="px-2.5 py-1.5 {{ app()->getLocale() === 'en' ? 'bg-neutral-900 dark:bg-white text-white dark:text-neutral-950' : 'text-neutral-600 dark:text-neutral-300' }}">EN</a>
