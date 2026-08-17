@@ -26,7 +26,7 @@ export function initHero3D(canvasId) {
 
     const fill = new THREE.Mesh(
         geometry,
-        new THREE.MeshBasicMaterial({ color: fillColor, transparent: true, opacity: isDark ? 0.12 : 0.06, side: THREE.BackSide })
+        new THREE.MeshBasicMaterial({ color: fillColor, transparent: true, opacity: isDark ? 0.12 : 0.16, side: THREE.BackSide })
     );
     group.add(fill);
 
@@ -60,7 +60,7 @@ export function initHero3D(canvasId) {
     const observer = new MutationObserver(() => {
         const dark = document.documentElement.classList.contains('dark');
         fill.material.color.set(dark ? 0x6366f1 : 0x4338ca);
-        fill.material.opacity = dark ? 0.12 : 0.06;
+        fill.material.opacity = dark ? 0.12 : 0.16;
         wireframe.material.color.set(dark ? 0x818cf8 : 0x4f46e5);
         wireframe.material.opacity = dark ? 0.95 : 0.75;
         outerWireframe.material.color.set(dark ? 0x818cf8 : 0x4f46e5);

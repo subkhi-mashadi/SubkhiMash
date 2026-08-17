@@ -3,12 +3,12 @@
 @endphp
 
 <section id="hero" class="relative min-h-screen flex items-center overflow-hidden pt-24">
-    <canvas id="hero-canvas" class="absolute inset-0 w-full h-full opacity-60 dark:opacity-100"></canvas>
+    <canvas id="hero-canvas" class="absolute inset-0 w-full h-full opacity-90 dark:opacity-100"></canvas>
 
-    <div class="absolute inset-0 bg-gradient-to-b from-white/0 via-white/40 to-white dark:from-neutral-950/0 dark:via-neutral-950/40 dark:to-neutral-950 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-white/0 via-white/10 to-white/80 dark:from-neutral-950/0 dark:via-neutral-950/40 dark:to-neutral-950 pointer-events-none"></div>
 
     <div class="relative z-10 max-w-6xl mx-auto px-6 w-full">
-        <p class="reveal text-indigo-500 dark:text-indigo-400 font-medium mb-4 tracking-wide">{{ __('portfolio.hero.greeting') }}</p>
+        <p class="reveal text-indigo-600 dark:text-indigo-400 font-medium mb-4 tracking-wide">{{ __('portfolio.hero.greeting') }}</p>
         <h1 class="reveal text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight max-w-3xl">
             Subkhi Mashadi — <span class="text-neutral-500 dark:text-neutral-400">{{ __('portfolio.hero.role') }}</span>
         </h1>

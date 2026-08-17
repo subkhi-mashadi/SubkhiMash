@@ -6,13 +6,14 @@
 
 <section
     id="github"
-    class="py-24 border-t border-neutral-200 dark:border-white/5 bg-neutral-50 dark:bg-neutral-900/30"
+    class="py-24 bg-indigo-50 dark:bg-neutral-900/30"
     x-data="{
         year: {{ $currentYear }},
         years: {{ Illuminate\Support\Js::from($availableYears) }},
         total: null,
         cells: [],
         loading: true,
+        isMobile: window.matchMedia('(max-width: 767px)').matches,
         languages: [],
         languagesLoading: true,
         async loadLanguages() {
@@ -82,10 +83,10 @@
             return labels;
         },
     }"
-    x-init="load(year); loadLanguages()"
+    x-init="load(year); loadLanguages(); window.matchMedia('(max-width: 767px)').addEventListener('change', (e) => isMobile = e.matches)"
 >
     <div class="max-w-5xl mx-auto px-6">
-        <p class="reveal text-indigo-500 dark:text-indigo-400 font-medium mb-2 text-center">{{ __('portfolio.github.label') }}</p>
+        <p class="reveal text-indigo-600 dark:text-indigo-400 font-medium mb-2 text-center">{{ __('portfolio.github.label') }}</p>
         <h2 class="reveal text-3xl font-bold mb-4 text-center">{{ __('portfolio.github.title') }}</h2>
         <p class="reveal text-neutral-600 dark:text-neutral-400 text-center mb-12">{{ __('portfolio.github.subtitle') }}</p>
 
@@ -131,21 +132,23 @@
 
         <div class="reveal w-full rounded-2xl border border-neutral-200 dark:border-white/10 bg-white dark:bg-neutral-950/40 p-4">
             <p x-show="loading" class="text-center text-sm text-neutral-500 py-8">…</p>
-            <div x-show="!loading">
-                <div class="grid mb-1" :style="`grid-template-columns: repeat(${weekCount()}, minmax(0,1fr)); height: 14px;`">
-                    <template x-for="m in monthLabels()" :key="m.label + m.week">
-                        <span class="text-xs text-neutral-500 overflow-hidden" :style="`grid-column: ${m.week + 1} / -1; grid-row: 1;`" x-text="m.label"></span>
-                    </template>
-                </div>
-                <div class="grid gap-[3px]" :style="`grid-template-columns: repeat(${weekCount()}, minmax(0,1fr)); grid-template-rows: repeat(7, 1fr); height: 91px;`">
-                    <template x-for="cell in cells" :key="cell.date">
-                        <div
-                            :class="levelClasses[cell.level]"
-                            class="rounded-xs"
-                            :style="`grid-column: ${weekIndex(cell.date) + 1}; grid-row: ${dayIndex(cell.date) + 1};`"
-                            :title="cell.date"
-                        ></div>
-                    </template>
+            <div x-show="!loading" class="overflow-x-auto pb-1">
+                <div :style="`${isMobile ? 'min-width: ' + (weekCount() * 13) + 'px' : ''}`">
+                    <div class="grid mb-1" :style="`grid-template-columns: repeat(${weekCount()}, ${isMobile ? '10px' : 'minmax(0,1fr)'}); height: 14px;`">
+                        <template x-for="m in monthLabels()" :key="m.label + m.week">
+                            <span class="text-xs text-neutral-500 overflow-hidden" :style="`grid-column: ${m.week + 1} / -1; grid-row: 1;`" x-text="m.label"></span>
+                        </template>
+                    </div>
+                    <div class="grid gap-[3px]" :style="`grid-template-columns: repeat(${weekCount()}, ${isMobile ? '10px' : 'minmax(0,1fr)'}); grid-template-rows: repeat(7, ${isMobile ? '10px' : '1fr'}); ${isMobile ? '' : 'height: 91px;'}`">
+                        <template x-for="cell in cells" :key="cell.date">
+                            <div
+                                :class="levelClasses[cell.level]"
+                                class="rounded-xs"
+                                :style="`grid-column: ${weekIndex(cell.date) + 1}; grid-row: ${dayIndex(cell.date) + 1};`"
+                                :title="cell.date"
+                            ></div>
+                        </template>
+                    </div>
                 </div>
             </div>
         </div>

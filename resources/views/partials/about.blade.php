@@ -3,8 +3,8 @@
     $locale = app()->getLocale();
 @endphp
 
-<section id="about" class="relative py-24 border-t border-neutral-200 dark:border-white/5 overflow-hidden">
-    <canvas id="about-canvas" class="absolute inset-0 w-full h-full opacity-70 dark:opacity-100"></canvas>
+<section id="about" class="relative py-24 overflow-hidden">
+    <canvas id="about-canvas" class="absolute inset-0 w-full h-full opacity-90 dark:opacity-100"></canvas>
 
     <div class="relative z-10 max-w-6xl mx-auto px-6 grid md:grid-cols-5 gap-12 items-center">
         <div class="reveal aspect-square max-w-sm md:col-span-2">
@@ -18,7 +18,7 @@
         </div>
 
         <div class="reveal md:col-span-3">
-            <p class="text-indigo-500 dark:text-indigo-400 font-medium mb-2">{{ __('portfolio.about.label') }}</p>
+            <p class="text-indigo-600 dark:text-indigo-400 font-medium mb-2">{{ __('portfolio.about.label') }}</p>
             <h2 class="text-3xl font-bold mb-6">{{ __('portfolio.about.title') }}</h2>
             <p class="text-neutral-600 dark:text-neutral-400 mb-4 leading-relaxed">
                 {{ $locale === 'id' ? $profile->about_p1_id : $profile->about_p1_en }}

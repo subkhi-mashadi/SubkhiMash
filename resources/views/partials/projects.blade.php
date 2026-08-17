@@ -15,9 +15,9 @@
         ]);
 @endphp
 
-<section id="projects" class="py-24 border-t border-neutral-200 dark:border-white/5">
+<section id="projects" class="py-24">
     <div class="max-w-6xl mx-auto px-6">
-        <p class="reveal text-indigo-500 dark:text-indigo-400 font-medium mb-2 text-center">{{ __('portfolio.projects.label') }}</p>
+        <p class="reveal text-indigo-600 dark:text-indigo-400 font-medium mb-2 text-center">{{ __('portfolio.projects.label') }}</p>
         <h2 class="reveal text-3xl font-bold mb-14 text-center">{{ __('portfolio.projects.title') }}</h2>
 
         <div class="grid md:grid-cols-3 gap-8">

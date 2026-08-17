@@ -13,9 +13,9 @@
         ]);
 @endphp
 
-<section id="experience" class="py-24 border-t border-neutral-200 dark:border-white/5 bg-neutral-50 dark:bg-neutral-900/30">
+<section id="experience" class="py-24 bg-indigo-50 dark:bg-neutral-900/30">
     <div class="max-w-4xl mx-auto px-6">
-        <p class="reveal text-indigo-500 dark:text-indigo-400 font-medium mb-2 text-center">{{ __('portfolio.experience.label') }}</p>
+        <p class="reveal text-indigo-600 dark:text-indigo-400 font-medium mb-2 text-center">{{ __('portfolio.experience.label') }}</p>
         <h2 class="reveal text-3xl font-bold mb-14 text-center">{{ __('portfolio.experience.title') }}</h2>
 
         <div class="space-y-10">

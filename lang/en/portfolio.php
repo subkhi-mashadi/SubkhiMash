@@ -86,6 +86,6 @@ return [
 
     'footer' => [
         'rights' => 'All rights reserved.',
-        'built' => 'Built with Laravel, Tailwind & Three.js',
+        'built' => 'Available for freelance projects and full-time remote positions.',
     ],
 ];

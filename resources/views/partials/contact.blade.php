@@ -2,9 +2,9 @@
     $profile = \App\Models\Profile::current();
 @endphp
 
-<section id="contact" class="py-24 border-t border-neutral-200 dark:border-white/5 bg-neutral-50 dark:bg-neutral-900/30">
+<section id="contact" class="py-24 bg-indigo-50 dark:bg-neutral-900/30">
     <div class="max-w-3xl mx-auto px-6 text-center">
-        <p class="reveal text-indigo-500 dark:text-indigo-400 font-medium mb-2">{{ __('portfolio.contact.label') }}</p>
+        <p class="reveal text-indigo-600 dark:text-indigo-400 font-medium mb-2">{{ __('portfolio.contact.label') }}</p>
         <h2 class="reveal text-3xl font-bold mb-4">{{ __('portfolio.contact.title') }}</h2>
         <p class="reveal text-neutral-600 dark:text-neutral-400 mb-10">
             {{ __('portfolio.contact.subtitle') }}

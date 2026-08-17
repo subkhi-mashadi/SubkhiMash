@@ -9,7 +9,7 @@
 >
     <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
         <a href="#hero" class="font-semibold tracking-tight text-lg">
-            SubkhiMash<span class="text-indigo-500 dark:text-indigo-400">.</span>
+            SubkhiMash<span class="text-indigo-600 dark:text-indigo-400">.</span>
         </a>
 
         <ul class="hidden md:flex items-center gap-8 text-sm text-neutral-600 dark:text-neutral-300">
