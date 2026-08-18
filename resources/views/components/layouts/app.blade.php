@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="google-site-verification" content="8maWVCsEgqucDu2K0ulOh7FC-05mpcJoKSj6p8IWEqw" />
 
         @php
             $seoProfile = \App\Models\Profile::current();
