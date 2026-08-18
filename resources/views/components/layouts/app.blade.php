@@ -1,27 +1,52 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ $title ?? config('app.name', 'Portfolio') }}</title>
-        <meta name="description" content="{{ $description ?? 'Portfolio developer — freelance & full-time remote.' }}">
 
-        <meta property="og:title" content="{{ $title ?? config('app.name', 'Portfolio') }}">
-        <meta property="og:description" content="{{ $description ?? 'Portfolio developer — freelance & full-time remote.' }}">
+        @php
+            $seoProfile = \App\Models\Profile::current();
+            $seoTitle = $title ?? 'Subkhi Mashadi — Fullstack Laravel Developer';
+            $seoDescription = $description ?? 'Portfolio Subkhi Mashadi, Fullstack Developer spesialis Laravel & PHP. Siap direkrut untuk posisi remote full-time maupun proyek freelance.';
+            $seoImage = $seoProfile->photo_path ? \Illuminate\Support\Facades\Storage::url($seoProfile->photo_path) : null;
+        @endphp
+
+        <title>{{ $seoTitle }}</title>
+        <meta name="description" content="{{ $seoDescription }}">
+        <meta name="robots" content="index, follow">
+        <meta name="keywords" content="Laravel Developer, Fullstack Developer Laravel, PHP Developer, Laravel Programmer Indonesia, Remote Laravel Developer, FilamentPHP Developer">
+        <link rel="canonical" href="{{ url()->current() }}">
+
+        <meta property="og:title" content="{{ $seoTitle }}">
+        <meta property="og:description" content="{{ $seoDescription }}">
         <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ url()->current() }}">
+        <meta property="og:locale" content="{{ app()->getLocale() === 'id' ? 'id_ID' : 'en_US' }}">
+        @if ($seoImage)
+            <meta property="og:image" content="{{ $seoImage }}">
+        @endif
+
+        <meta name="twitter:card" content="{{ $seoImage ? 'summary_large_image' : 'summary' }}">
+        <meta name="twitter:title" content="{{ $seoTitle }}">
+        <meta name="twitter:description" content="{{ $seoDescription }}">
+        @if ($seoImage)
+            <meta name="twitter:image" content="{{ $seoImage }}">
+        @endif
 
         @php
             $personSchema = [
                 '@context' => 'https://schema.org',
                 '@type' => 'Person',
                 'name' => 'Subkhi Mashadi',
-                'jobTitle' => 'Full-Stack Developer',
+                'jobTitle' => 'Fullstack Laravel Developer',
+                'description' => 'Fullstack Developer spesialis Laravel, PHP, dan FilamentPHP. Berpengalaman membangun aplikasi web untuk kebutuhan startup dan enterprise.',
                 'url' => url('/'),
-                'sameAs' => [
-                    'https://github.com/subkhi-mashadi',
-                    'https://linkedin.com/in/yourhandle',
-                ],
-                'knowsAbout' => ['PHP', 'Laravel', 'JavaScript', 'MySQL', 'Web Development'],
+                'image' => $seoImage,
+                'sameAs' => array_values(array_filter([
+                    $seoProfile->github,
+                    $seoProfile->linkedin,
+                ])),
+                'knowsAbout' => ['PHP', 'Laravel', 'FilamentPHP', 'JavaScript', 'MySQL', 'REST API', 'Web Development'],
             ];
         @endphp
         <script type="application/ld+json">{!! json_encode($personSchema) !!}</script>

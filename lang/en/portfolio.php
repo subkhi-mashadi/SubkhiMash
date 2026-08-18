@@ -15,7 +15,7 @@ return [
 
     'hero' => [
         'greeting' => "Hi, I'm",
-        'role' => 'Full-Stack Developer',
+        'role' => 'Fullstack Laravel Developer',
         'subtitle' => 'I build fast, clean, production-ready web applications. Available for freelance projects and remote full-time roles.',
         'cta_projects' => 'View Projects',
         'cta_contact' => 'Contact Me',

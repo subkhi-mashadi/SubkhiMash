@@ -9,6 +9,16 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/sitemap.xml', function () {
+    $urls = [
+        ['loc' => url('/'), 'priority' => '1.0'],
+    ];
+
+    $xml = view('sitemap', compact('urls'))->render();
+
+    return response($xml, 200, ['Content-Type' => 'application/xml']);
+})->name('sitemap');
+
 Route::get('/api/github-contributions', function (\Illuminate\Http\Request $request) {
     $username = 'subkhi-mashadi';
     $currentYear = (int) now()->year;

@@ -15,7 +15,7 @@ return [
 
     'hero' => [
         'greeting' => "Hi, saya",
-        'role' => 'Full-Stack Developer',
+        'role' => 'Fullstack Laravel Developer',
         'subtitle' => 'Bangun web aplikasi cepat, rapi, dan siap production. Tersedia untuk proyek freelance maupun posisi remote full-time.',
         'cta_projects' => 'Lihat Proyek',
         'cta_contact' => 'Hubungi Saya',
