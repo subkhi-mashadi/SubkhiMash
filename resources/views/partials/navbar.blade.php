@@ -8,7 +8,8 @@
     class="fixed top-0 inset-x-0 z-50 border-b border-neutral-200 dark:border-white/5 backdrop-blur-lg bg-white/70 dark:bg-neutral-950/70 transition-colors"
 >
     <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#hero" class="font-semibold tracking-tight text-lg">
+        <a href="#hero" class="flex items-center gap-2 font-semibold tracking-tight text-lg">
+            <img src="{{ asset('assets/logo.gif') }}" alt="SubkhiMash" class="h-8 w-8 object-contain">
             SubkhiMash<span class="text-indigo-600 dark:text-indigo-400">.</span>
         </a>
 
