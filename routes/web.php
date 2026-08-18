@@ -14,7 +14,12 @@ Route::get('/sitemap.xml', function () {
         ['loc' => url('/'), 'priority' => '1.0'],
     ];
 
-    $xml = view('sitemap', compact('urls'))->render();
+    $xml = '<'.'?xml version="1.0" encoding="UTF-8"?'.'>'."\n";
+    $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'."\n";
+    foreach ($urls as $url) {
+        $xml .= '<url><loc>'.e($url['loc']).'</loc><changefreq>weekly</changefreq><priority>'.$url['priority'].'</priority></url>'."\n";
+    }
+    $xml .= '</urlset>';
 
     return response($xml, 200, ['Content-Type' => 'application/xml']);
 })->name('sitemap');
