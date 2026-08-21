@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Certificate;
 use App\Models\Experience;
 use App\Models\Profile;
+use App\Models\Project;
 use App\Models\Skill;
 use Illuminate\Database\Seeder;
 
@@ -199,6 +200,68 @@ class PortfolioSeeder extends Seeder
             Certificate::query()->updateOrCreate(
                 ['title' => $certificate['title']],
                 array_merge($certificate, ['is_active' => true]),
+            );
+        }
+
+        $projects = [
+            [
+                'title' => 'Konnco Studio Client Portal',
+                'cover_path' => 'projects/client-portal.svg',
+                'stack' => ['Laravel', 'React', 'MySQL', 'RESTful API'],
+                'github' => 'https://github.com/subkhi-mashadi/client-portal',
+                'live' => 'https://klien.konncostudio.com',
+                'problem_id' => 'Tim internal kesulitan melacak progres proyek klien karena komunikasi tersebar di banyak channel terpisah.',
+                'problem_en' => 'The internal team struggled to track client project progress because communication was scattered across many separate channels.',
+                'solution_id' => 'Membangun portal klien fullstack dengan Laravel di Back-End dan React di Front-End, lengkap dengan dashboard progres real-time dan RESTful API buat integrasi antar tim.',
+                'solution_en' => 'Built a fullstack client portal with Laravel on the back-end and React on the front-end, complete with a real-time progress dashboard and a RESTful API for cross-team integration.',
+                'result_id' => 'Waktu respon tim ke klien turun 40%, semua progres proyek terpusat di satu tempat.',
+                'result_en' => 'Reduced team response time to clients by 40%, centralizing all project progress in one place.',
+            ],
+            [
+                'title' => 'Inventory & POS System',
+                'cover_path' => 'projects/inventory-pos.svg',
+                'stack' => ['Laravel', 'MySQL', 'Alpine.js', 'Tailwind CSS'],
+                'github' => 'https://github.com/subkhi-mashadi/inventory-pos',
+                'live' => 'https://demo-pos.subkhimash.dev',
+                'problem_id' => 'UMKM masih mencatat stok dan penjualan secara manual, sering terjadi selisih stok dan laporan yang lambat.',
+                'problem_en' => 'Small businesses were tracking stock and sales manually, leading to frequent stock discrepancies and slow reporting.',
+                'solution_id' => 'Mengembangkan sistem POS & inventory berbasis Laravel dengan validasi stok otomatis, cetak struk, dan laporan penjualan harian.',
+                'solution_en' => 'Developed a Laravel-based POS and inventory system with automatic stock validation, receipt printing, and daily sales reports.',
+                'result_id' => 'Selisih stok berkurang signifikan, laporan penjualan bisa diakses real-time tanpa rekap manual.',
+                'result_en' => 'Significantly reduced stock discrepancies, with real-time sales reports replacing manual recaps.',
+            ],
+            [
+                'title' => 'Alma Ata University Website Revamp',
+                'cover_path' => 'projects/almaata-revamp.svg',
+                'stack' => ['WordPress', 'Elementor', 'SEO'],
+                'github' => null,
+                'live' => 'https://almaata.ac.id',
+                'problem_id' => 'Website kampus punya struktur URL berantakan dan skor SEO rendah, susah ditemukan calon mahasiswa lewat Google.',
+                'problem_en' => 'The university website had messy URL structures and low SEO scores, making it hard for prospective students to find via Google.',
+                'solution_id' => 'Melakukan revamp on-page SEO (heading, URL, internal linking, schema markup) dan membangun ulang halaman-halaman utama pakai Elementor.',
+                'solution_en' => 'Performed an on-page SEO revamp (headings, URLs, internal linking, schema markup) and rebuilt key pages using Elementor.',
+                'result_id' => 'Trafik organik meningkat, halaman utama lebih cepat diakses dan lebih rapi secara struktur.',
+                'result_en' => 'Increased organic traffic, with main pages loading faster and structured more cleanly.',
+            ],
+            [
+                'title' => 'Realtime Chat Dashboard',
+                'cover_path' => 'projects/chat-dashboard.svg',
+                'stack' => ['Node.js', 'Express.js', 'React', 'Socket.IO'],
+                'github' => 'https://github.com/subkhi-mashadi/realtime-chat-dashboard',
+                'live' => 'https://chat-demo.subkhimash.dev',
+                'problem_id' => 'Tim customer service butuh alat monitoring chat pelanggan secara real-time tanpa refresh manual.',
+                'problem_en' => 'The customer service team needed a tool to monitor customer chats in real time without manual refreshing.',
+                'solution_id' => 'Membangun dashboard chat real-time dengan Express.js dan Socket.IO di Backend, React di Front-End buat update pesan instan.',
+                'solution_en' => 'Built a real-time chat dashboard with Express.js and Socket.IO on the back-end, and React on the front-end for instant message updates.',
+                'result_id' => 'Waktu tanggap CS ke pelanggan lebih cepat, tanpa perlu refresh halaman manual.',
+                'result_en' => 'Faster customer service response times, eliminating the need for manual page refreshes.',
+            ],
+        ];
+
+        foreach ($projects as $project) {
+            Project::query()->updateOrCreate(
+                ['title' => $project['title']],
+                array_merge($project, ['is_active' => true]),
             );
         }
     }
