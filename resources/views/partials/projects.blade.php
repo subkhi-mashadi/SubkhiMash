@@ -8,7 +8,9 @@
             'stack' => $p->stack,
             'github' => $p->github,
             'live' => $p->live,
-            'cover' => $p->cover_path ? \Illuminate\Support\Facades\Storage::url($p->cover_path) : null,
+            'cover' => $p->cover_path
+                ? (str_starts_with($p->cover_path, 'http') ? $p->cover_path : \Illuminate\Support\Facades\Storage::url($p->cover_path))
+                : null,
             'problem' => ['id' => $p->problem_id, 'en' => $p->problem_en],
             'solution' => ['id' => $p->solution_id, 'en' => $p->solution_en],
             'result' => ['id' => $p->result_id, 'en' => $p->result_en],

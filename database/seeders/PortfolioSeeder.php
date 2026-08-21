@@ -206,7 +206,7 @@ class PortfolioSeeder extends Seeder
         $projects = [
             [
                 'title' => 'Konnco Studio Client Portal',
-                'cover_path' => 'projects/client-portal.svg',
+                'cover_path' => 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
                 'stack' => ['Laravel', 'React', 'MySQL', 'RESTful API'],
                 'github' => 'https://github.com/subkhi-mashadi/client-portal',
                 'live' => 'https://klien.konncostudio.com',
@@ -219,7 +219,7 @@ class PortfolioSeeder extends Seeder
             ],
             [
                 'title' => 'Inventory & POS System',
-                'cover_path' => 'projects/inventory-pos.svg',
+                'cover_path' => 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80',
                 'stack' => ['Laravel', 'MySQL', 'Alpine.js', 'Tailwind CSS'],
                 'github' => 'https://github.com/subkhi-mashadi/inventory-pos',
                 'live' => 'https://demo-pos.subkhimash.dev',
@@ -232,7 +232,7 @@ class PortfolioSeeder extends Seeder
             ],
             [
                 'title' => 'Alma Ata University Website Revamp',
-                'cover_path' => 'projects/almaata-revamp.svg',
+                'cover_path' => 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80',
                 'stack' => ['WordPress', 'Elementor', 'SEO'],
                 'github' => null,
                 'live' => 'https://almaata.ac.id',
@@ -245,7 +245,7 @@ class PortfolioSeeder extends Seeder
             ],
             [
                 'title' => 'Realtime Chat Dashboard',
-                'cover_path' => 'projects/chat-dashboard.svg',
+                'cover_path' => 'https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&w=800&q=80',
                 'stack' => ['Node.js', 'Express.js', 'React', 'Socket.IO'],
                 'github' => 'https://github.com/subkhi-mashadi/realtime-chat-dashboard',
                 'live' => 'https://chat-demo.subkhimash.dev',
